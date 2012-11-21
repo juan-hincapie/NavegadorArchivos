@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Comander">
+  <grid id="27dc6" binding="Manejador" custom-create="true" layout-manager="FormLayout">
+    <rowspec value="center:25px:noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="top:12dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="center:d:grow"/>
+    <colspec value="fill:d:grow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:d:grow"/>
+    <constraints>
+      <xy x="20" y="19" width="683" height="509"/>
+    </constraints>
+    <properties/>
+    <border type="none" title="Navegador Archivos" title-justification="2"/>
+    <children>
+      <component id="a203a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Directorio Origen"/>
+        </properties>
+      </component>
+      <component id="f0c60" class="javax.swing.JTree" binding="treeDest">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="97e37" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Directorio Destino"/>
+        </properties>
+      </component>
+      <toolbar id="4736b">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="20"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="6e7b0" class="javax.swing.JButton" binding="copiarArchivoButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Copiar Archivo"/>
+            </properties>
+          </component>
+          <component id="5dd2a" class="javax.swing.JButton" binding="copiarDirectorioButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Copiar Directorio"/>
+            </properties>
+          </component>
+          <component id="6ae80" class="javax.swing.JButton" binding="moverButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Mover"/>
+            </properties>
+          </component>
+          <component id="2a4b4" class="javax.swing.JButton" binding="borrarArchivoButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Borrar Archivo"/>
+            </properties>
+          </component>
+          <component id="a1a80" class="javax.swing.JButton" binding="borrarDirectorioButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Borrar Directorio"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+      <component id="bbb85" class="javax.swing.JTextPane" binding="txtDirOrig">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="967e7" class="javax.swing.JTextPane" binding="txtDirDest">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="38963" class="javax.swing.JTree" binding="treeOrig">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>
