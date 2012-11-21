@@ -1,8 +1,12 @@
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Vector;
@@ -37,17 +41,27 @@ public class Comander {
             Process dir = Runtime.getRuntime().exec("cmd /c cd");
             BufferedReader br = new BufferedReader(new InputStreamReader(dir.getInputStream()));
             localDir = br.readLine();
+
         } catch (Exception e) {
         }
         $$$setupUI$$$();
+        txtOrig.setText(localDir);
+        txtDest.setText(localDir);
         trOrig.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
                 DefaultMutableTreeNode seleccionado = (DefaultMutableTreeNode) trOrig.getLastSelectedPathComponent();
                 if (ListaDirSupOr.contains(seleccionado.getUserObject().toString())) {
                     addHijos(seleccionado, "O");
+
                 } else if (ListaArchSupOr.contains(seleccionado.getUserObject().toString())) {
-                    Ruta += "\\" + seleccionado.getUserObject().toString();
+
+                    DefaultMutableTreeNode upNode = (seleccionado.isRoot()) ? seleccionado : (DefaultMutableTreeNode) seleccionado.getParent();
+                    Ruta = seleccionado.getUserObject().toString();
+                    while (!upNode.isRoot()) {
+                        Ruta = upNode.getUserObject().toString() + "\\" + Ruta;
+                        upNode = (DefaultMutableTreeNode) upNode.getParent();
+                    }
                 }
                 txtOrig.setText(localDir + "\\" + Ruta);
             }
@@ -58,10 +72,40 @@ public class Comander {
                 DefaultMutableTreeNode seleccionado = (DefaultMutableTreeNode) trDest.getLastSelectedPathComponent();
                 if (ListaDirSupDe.contains(seleccionado.getUserObject().toString())) {
                     addHijos(seleccionado, "D");
+
                 } else if (ListaArchSupDe.contains(seleccionado.getUserObject().toString())) {
-                    Ruta += "\\" + seleccionado.getUserObject().toString();
+
+                    DefaultMutableTreeNode upNode = (seleccionado.isRoot()) ? seleccionado : (DefaultMutableTreeNode) seleccionado.getParent();
+                    Ruta = seleccionado.getUserObject().toString();
+                    while (!upNode.isRoot()) {
+                        Ruta = upNode.getUserObject().toString() + "\\" + Ruta;
+                        upNode = (DefaultMutableTreeNode) upNode.getParent();
+                    }
                 }
                 txtDest.setText(localDir + "\\" + Ruta);
+            }
+        });
+
+        copiarButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                DefaultMutableTreeNode nod = (DefaultMutableTreeNode) trOrig.getLastSelectedPathComponent();
+
+                String cmdStr = (!ListaArchSupOr.contains(nod.getUserObject().toString())) ?
+                        "cmd /c xcopy \"" + txtOrig.getText() + "\" \"" + txtDest.getText() + "\\" + nod.getUserObject().toString() + "\" /i /e" :
+                        "cmd /c copy \"" + txtOrig.getText() + "\" \"" + txtDest.getText() + "\" ";
+                System.out.println(cmdStr);
+                try {
+                    Process copy = Runtime.getRuntime().exec(cmdStr);
+                } catch (Exception X) {
+                }
+                ((DefaultMutableTreeNode) trDest.getLastSelectedPathComponent()).removeAllChildren();
+                System.out.println(RootOr.getIndex(new DefaultMutableTreeNode(((DefaultMutableTreeNode) trDest.getLastSelectedPathComponent()).getUserObject())));
+                addHijos(((DefaultMutableTreeNode) trDest.getLastSelectedPathComponent()), "D");
+                DefaultTreeModel model = (DefaultTreeModel) trDest.getModel();
+                model.reload();
+                panel1.repaint();
+                System.gc();
+
             }
         });
     }
@@ -145,8 +189,7 @@ public class Comander {
         createUIComponents();
         panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(4, 3, new Insets(0, 0, 0, 0), -1, -1));
-        panel1.add(trOrig, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
-        panel1.add(trDest, new com.intellij.uiDesigner.core.GridConstraints(3, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
+        panel1.setBorder(BorderFactory.createTitledBorder(null, "NavArchUnal", TitledBorder.CENTER, TitledBorder.ABOVE_TOP));
         final JToolBar toolBar1 = new JToolBar();
         panel1.add(toolBar1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 20), null, 0, false));
         copiarButton = new JButton();
@@ -174,6 +217,12 @@ public class Comander {
         panel1.add(txtDest, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         txtOrig = new JTextField();
         panel1.add(txtOrig, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        final JScrollPane scrollPane1 = new JScrollPane();
+        panel1.add(scrollPane1, new com.intellij.uiDesigner.core.GridConstraints(3, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        scrollPane1.setViewportView(trDest);
+        final JScrollPane scrollPane2 = new JScrollPane();
+        panel1.add(scrollPane2, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        scrollPane2.setViewportView(trOrig);
     }
 
     /**
