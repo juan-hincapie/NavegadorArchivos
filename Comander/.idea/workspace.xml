@@ -66,15 +66,20 @@
       <file leaf-file-name="Comander.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Comander.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="157" selection-start="4059" selection-end="4059" vertical-scroll-proportion="0.97159094">
+            <state line="60" column="70" selection-start="2581" selection-end="2581" vertical-scroll-proportion="0.4090909">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#699#707#0" expanded="true" />
-                <element signature="e#755#763#0" expanded="true" />
-                <element signature="e#953#1354#0" expanded="true" />
-                <element signature="e#1343#1344#0" expanded="true" />
-                <element signature="e#1553#1561#0" expanded="true" />
-                <element signature="e#1610#1618#0" expanded="true" />
+                <element signature="e#726#734#0" expanded="true" />
+                <element signature="e#784#792#0" expanded="true" />
+                <element signature="e#841#849#0" expanded="true" />
+                <element signature="e#899#907#0" expanded="true" />
+                <element signature="e#1465#2101#0" expanded="true" />
+                <element signature="e#2090#2091#0" expanded="true" />
+                <element signature="e#2144#2780#0" expanded="true" />
+                <element signature="e#2769#2770#0" expanded="true" />
+                <element signature="e#2994#3002#0" expanded="true" />
+                <element signature="e#3051#3059#0" expanded="true" />
+                <element signature="method#$$$setupUI$$$#0;class#Comander#0" expanded="true" />
                 <element signature="method#$$$setupUI$$$#0;class#Comander#0" expanded="true" />
               </folding>
             </state>
@@ -84,7 +89,7 @@
       <file leaf-file-name="navArch.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Documents/GitHub/NavegadorArchivos/navArch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="8" selection-start="2221" selection-end="2263" vertical-scroll-proportion="0.0">
+            <state line="74" column="8" selection-start="2426" selection-end="2663" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#2737#3195#0" expanded="true" />
                 <element signature="e#3176#3177#0" expanded="true" />
@@ -117,8 +122,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Comander.form" />
         <option value="$USER_HOME$/Documents/GitHub/NavegadorArchivos/navArch.java" />
+        <option value="$PROJECT_DIR$/src/Comander.form" />
         <option value="$PROJECT_DIR$/src/Comander.java" />
       </list>
     </option>
@@ -390,7 +395,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25493172" sideWeight="0.6712329" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -407,7 +412,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39984825" sideWeight="0.6712329" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -476,7 +481,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Documents/GitHub/NavegadorArchivos/navArch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="8" selection-start="2221" selection-end="2263" vertical-scroll-proportion="0.0">
+        <state line="74" column="8" selection-start="2426" selection-end="2663" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#2737#3195#0" expanded="true" />
             <element signature="e#3176#3177#0" expanded="true" />
@@ -489,17 +494,29 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_04/src.zip!/javax/swing/JTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2918" column="0" selection-start="105403" selection-end="105403" vertical-scroll-proportion="0.33150685">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Comander.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="157" selection-start="4059" selection-end="4059" vertical-scroll-proportion="0.97159094">
+        <state line="60" column="70" selection-start="2581" selection-end="2581" vertical-scroll-proportion="0.4090909">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#699#707#0" expanded="true" />
-            <element signature="e#755#763#0" expanded="true" />
-            <element signature="e#953#1354#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1553#1561#0" expanded="true" />
-            <element signature="e#1610#1618#0" expanded="true" />
+            <element signature="e#726#734#0" expanded="true" />
+            <element signature="e#784#792#0" expanded="true" />
+            <element signature="e#841#849#0" expanded="true" />
+            <element signature="e#899#907#0" expanded="true" />
+            <element signature="e#1465#2101#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2144#2780#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
+            <element signature="e#2994#3002#0" expanded="true" />
+            <element signature="e#3051#3059#0" expanded="true" />
+            <element signature="method#$$$setupUI$$$#0;class#Comander#0" expanded="true" />
             <element signature="method#$$$setupUI$$$#0;class#Comander#0" expanded="true" />
           </folding>
         </state>

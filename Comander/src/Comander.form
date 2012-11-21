@@ -16,7 +16,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="d40c9" class="javax.swing.JTree" binding="tree2" default-binding="true">
+      <component id="d40c9" class="javax.swing.JTree" binding="trDest" custom-create="true">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -33,34 +33,28 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="c5797" class="javax.swing.JButton" binding="button1" default-binding="true">
+          <component id="c5797" class="javax.swing.JButton" binding="copiarButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="Button"/>
+              <text value="Copiar"/>
             </properties>
           </component>
-          <component id="e90d2" class="javax.swing.JButton" binding="button2" default-binding="true">
+          <component id="e90d2" class="javax.swing.JButton" binding="moverButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="Button"/>
+              <text value="Mover"/>
             </properties>
           </component>
-          <component id="647a8" class="javax.swing.JButton" binding="button3" default-binding="true">
+          <component id="647a8" class="javax.swing.JButton" binding="borrarButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="Button"/>
+              <text value="Borrar"/>
             </properties>
           </component>
-          <component id="2f08b" class="javax.swing.JButton" binding="button4" default-binding="true">
+          <component id="2f08b" class="javax.swing.JButton" binding="renombrarButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="Button"/>
-            </properties>
-          </component>
-          <component id="93e05" class="javax.swing.JButton" binding="button5" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="Button"/>
+              <text value="Renombrar"/>
             </properties>
           </component>
         </children>
@@ -89,7 +83,7 @@
           <text value="&gt;&gt;"/>
         </properties>
       </component>
-      <component id="bdf41" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="bdf41" class="javax.swing.JTextField" binding="txtDest">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -97,7 +91,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="aaab8" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="aaab8" class="javax.swing.JTextField" binding="txtOrig">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
